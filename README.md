@@ -23,6 +23,8 @@ The experiments were conducted on 2 datasets:
 |Languages|English, French, and Dutch|Slovenian|
 |Domains|Corruption,  Wind energy, Equitation, Heart failure|Biomechanics, Chemistry, Veterinary, Linguistics |
 
+For the orginal versions, please refer to the following links:
+
 - The ACTER dataset can be downloaded at [AylaRT/ACTER](https://github.com/AylaRT/ACTER.git).
 - The RSDO dataset can be downloaded at [Corpus of term-annotated texts RSDO5 1.0](https://www.clarin.si/repository/xmlui/handle/11356/1400).
 
@@ -30,8 +32,43 @@ The experiments were conducted on 2 datasets:
 
 ### 4.1. Preprocessing
 
-(Update in details after the paper is accepted)
-The newly nested term labeling mechanism (NOBI) and the labeled data can be accessed at [honghanhh/NOBI](https://github.com/honghanhh/nobi).
+The newly nested term labeling mechanism (NOBI) and the labeled data can be accessed at [@honghanhh/nobi_annotation_regime](https://github.com/honghanhh/nobi_annotation_regime).
+
+### 4.2. Workflow
+
+The workflow of the model is described in our coming paper in 2023.
+To reproduce the results, please run the following command:
+
+```python
+chmod +x run.sh
+./run.sh
+```
+
+which will run the model that covers all the following scenarios:
+
+- ACTER dataset with XLM-RoBERTa in mono-lingual, cros-lingual, and multi-lingual settings with both ANN and NES version with multi-lingual settings covering only three languages from ACTER and additional Slovenian add-ons (10 scenarios).
+
+- RSDO5 dataset with XLM-RoBERTa in mono-lingual, cros-lingual, and multi-lingual settings with cross-lingual and multi-lingual taking into account the ANN and NES version (48 scenarios).
+
+Note that the model produces the results for NOBI annotated set. To reproduce the results for BIO annotated set, please refers to [@honghanhh/ate-2022](https://github.com/honghanhh/ate-2022).
+
+### 4.3. Model configuration
+
+Feel free to hyper-parameter tune the model. The current settings are:
+```python
+num_train_epochs=20,             # total # of training epochs
+per_device_train_batch_size=32,  # batch size per device during training
+per_device_eval_batch_size=32,   # batch size for evaluation 
+learning_rate=2e-5,              # learning rate
+eval_steps = 500,
+load_best_model_at_end=True,     # load the best model at the end of training
+metric_for_best_model="f1",
+greater_is_better=True
+```
+
+## 5. Results
+
+Plesae refer the results and error analysis to our coming paper in 2023.
 
 ## References
 
