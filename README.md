@@ -23,9 +23,15 @@ The experiments were conducted on 2 datasets:
 |Languages|English, French, and Dutch|Slovenian|
 |Domains|Corruption,  Wind energy, Equitation, Heart failure|Biomechanics, Chemistry, Veterinary, Linguistics |
 
+- The ACTER dataset can be downloaded at [AylaRT/ACTER](https://github.com/AylaRT/ACTER.git).
+- The RSDO dataset can be downloaded at [Corpus of term-annotated texts RSDO5 1.0](https://www.clarin.si/repository/xmlui/handle/11356/1400).
+
 ## 4. Implementation
 
+### 4.1. Preprocessing
+
 (Update in details after the paper is accepted)
+The newly nested term labeling mechanism (NOBI) and the labeled data can be accessed at [honghanhh/NOBI](https://github.com/honghanhh/nobi).
 
 ## References
 
