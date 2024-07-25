@@ -1,0 +1,1 @@
+python token_classifier.py --train1 ./acter/bio/data/fr_ann_equi.pkl --train2 ./acter/bio/data/fr_ann_htfl.pkl --val ./acter/bio/data/fr_ann_wind.pkl --test ./acter/bio/data/fr_ann_corp.pkl --gold_val ./acter/bio/groundtruth/wind_fr_terms.tsv --gold_test ./acter/bio/groundtruth/corp_fr_terms.tsv --output_dir ./output_dir --log_dir ./logs --metric_path fr_ann_wind_corp.txt
